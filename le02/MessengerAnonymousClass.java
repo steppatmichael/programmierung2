@@ -1,4 +1,6 @@
-public class Messenger {
+package le02;
+
+public class MessengerAnonymousClass {
 	
 	// funktionales Interface für die Ausgabe der Nachricht
 	interface Printer {

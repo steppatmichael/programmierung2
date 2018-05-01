@@ -1,3 +1,5 @@
+package le02;
+
 import java.util.Scanner;
 
 public class Eingabe {
