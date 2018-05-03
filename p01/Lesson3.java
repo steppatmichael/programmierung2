@@ -1,4 +1,4 @@
-
+package p01;
 /**
  * Lesson 3 - Performance measurement
  * A simple research on the time consumption of different array types 

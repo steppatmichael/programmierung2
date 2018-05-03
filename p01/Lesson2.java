@@ -1,4 +1,4 @@
-
+package p01;
 /**
  * Lesson 2 - A simple bookkeeping program
  * Use of ArrayList, one to many associations, FileIO, organizing data storage 
