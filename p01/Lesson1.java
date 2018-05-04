@@ -17,9 +17,7 @@ import java.util.*;
  * explicit loop in any of the code. Use method references rather than full
  * lambda expressions wherever possible.
  */
-public class Lesson1 {
-
-    private static final String WORD_REGEXP = "[- .:,]+";
+public class Lesson1 {   
 
     public void runExercises() throws IOException {
         System.out.println("JDK 8 Lambdas and Streams Lesson 1");
@@ -32,13 +30,7 @@ public class Lesson1 {
         System.out.println("Running exercise 4 solution...");
         exercise4();
         System.out.println("Running exercise 5 solution...");
-        exercise5();
-        System.out.println("Running exercise 6 solution...");
-        exercise6();
-        System.out.println("Running exercise 7 solution...");
-        exercise7();
-        System.out.println("Running exercise 8 solution...");
-        exercise8();
+        exercise5();       
     }
 
 
@@ -79,72 +71,33 @@ public class Lesson1 {
     /* YOUR CODE HERE */
     }
 
+    
+
     /**
      * Exercise 4
-     * <p>
-     * Convert every key-value pair of the map into a string and append them all
-     * into a single string, in iteration order.
+     * 
+     * Multiply all elements of the list with factor 3 and calculate the sum of the elements
      */
     private void exercise4() {
-        Map<String, Integer> map = new TreeMap<>();
-        map.put("c", 3);
-        map.put("b", 2);
-        map.put("a", 1);
-
-    /* YOUR CODE HERE */
-    }
-
-    /**
-     * Exercise 5
-     * <p>
-     * Create a new thread that prints the numbers from the list.
-     */
-    private void exercise5() {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
     /* YOUR CODE HERE */
     }
 
     /**
-     * Exercise 6
-     * <p>
+     * Exercise 5
+     * 
      * Create a new list with all the strings from original list converted to
      * lower case and print them out.
      */
-    private void exercise6() {
+    private void exercise5() {
         List<String> list = Arrays.asList(
                 "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG");
 
     /* YOUR CODE HERE */
     }
 
-    /**
-     * * Exercise 7
-     * <p>
-     * Count the number of lines in the file using the BufferedReader provided
-     */
-    private void exercise7() throws IOException {
-        try (BufferedReader reader = Files.newBufferedReader(
-                Paths.get("src/resources/sonnet.txt"), StandardCharsets.UTF_8)) {
-      /* YOUR CODE HERE */
-        }
-    }
-
-    /**
-     * * Exercise 8
-     * <p>
-     * Using the BufferedReader to access the file, create a list of words with
-     * no duplicates contained in the file.  Print the words.
-     * <p>
-     * HINT: A regular expression, WORD_REGEXP, is already defined for your use.
-     */
-    private void exercise8() throws IOException {
-
-        try (BufferedReader reader = Files.newBufferedReader(
-                Paths.get("src/resources/sonnet.txt"), StandardCharsets.UTF_8)) {
-      /* YOUR CODE HERE */
-        }
-    }
+    
 
     /**
      * Main entry point for application
