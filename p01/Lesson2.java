@@ -14,6 +14,10 @@ public class Lesson2 {
 	 * 
 	 * int nr;    		// number of transaction
 	 * Date date; 		// transaction date
+	 
+	   int debit;
+	   int credit;
+	 
 	 * String text;		// transaction text
 	 * double amount; 	// amount of the transaction
 	 * 
@@ -37,7 +41,7 @@ public class Lesson2 {
 	 * 
 	 * int nr; 								// account nr
 	 * String id;							// identifier of the account
-	 * ArrayList<Transaction> transaction;	// list with all transactions due to the account
+	 * HashMap<Integer, Integer> transaction;	// list with all transactions due to the account
 	 * 
 	 * There also some methods we need:
 	 * 
@@ -66,8 +70,8 @@ public class Lesson2 {
 	 * 
 	 * int nr;
 	 * Date date;
-	 * Account debit;
-	 * Account credit;
+	 * int debit;
+	 * int credit;
 	 * String text;
 	 * double amount;
 	 * 
