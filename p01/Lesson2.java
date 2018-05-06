@@ -57,7 +57,7 @@ public class Lesson2 {
 	 * "Feed" them with some transactions like the following:
 	 * A shop owner takes 300 $ from his bank account, buys goods for 200 $ and sells some
 	 * goods for 100 $. Before he took the money from the bank account there was a balance of
-	 * 1000 $. (You can set the star balance in the account using the add method.)
+	 * 1000 $. You can set the start balance in the account using the add method.
 	 * Choose one object and test all the getters
 	 * Test the amount of all three accounts  
 	 */
