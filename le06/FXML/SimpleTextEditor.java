@@ -1,4 +1,4 @@
-package le06;
+package com;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,23 +10,22 @@ import java.util.Optional;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DataFormat;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class SimpleTextEditor extends Application{
-	
+	@FXML
 	private TextArea textArea;
 	
 	private Stage stage;
@@ -36,73 +35,7 @@ public class SimpleTextEditor extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		this.stage = primaryStage;
-		// User Interface
-		// Texteditor
-		textArea = new TextArea();
-		AnchorPane root = new AnchorPane(textArea);
-		textArea.setPrefWidth(600);
-		textArea.setPrefHeight(400);
-		textArea.setLayoutY(27);
-		
-		// Menüleiste
-		MenuBar menuBar = new MenuBar();
-		menuBar.setPrefWidth(600);
-		root.getChildren().add(menuBar);
-		
-		// Menüs
-		Menu menuFile = new Menu("Datei");
-		menuBar.getMenus().add(menuFile);
-		Menu menuEdit = new Menu("Bearbeiten");
-		menuBar.getMenus().add(menuEdit);
-		Menu menuHelp = new Menu("Hilfe");
-		menuBar.getMenus().add(menuHelp);
-		
-		// Menüpunkte
-		// Datei			
-		
-		MenuItem miNew = new MenuItem("Neu");
-		miNew.setOnAction(e->{this.fileNew();});	
-		
-		MenuItem miOpen = new MenuItem("Öffnen");
-		miOpen.setOnAction(e->{this.fileOpen();});
-		
-		MenuItem miSave = new MenuItem("Speichern");
-		miSave.setOnAction(e->{this.fileSave();});
-		
-		MenuItem miSaveAs = new MenuItem("Speichern unter");
-		miSaveAs.setOnAction(e->{this.fileSaveAs();});
-		
-		MenuItem miQuit = new MenuItem("Beenden");
-		miQuit.setOnAction(e->{this.fileQuit();});
-		
-		menuFile.getItems().addAll(miNew, miOpen, miSave, miSaveAs, miQuit);
-		
-		// Bearbeiten
-		
-		MenuItem miUndo = new MenuItem("Rückgängig");
-		miUndo.setOnAction(e->{this.editUndo();});	
-		
-		MenuItem miCut = new MenuItem("Ausschneiden");
-		miCut.setOnAction(e->{this.editCut();});
-		
-		MenuItem miCopy = new MenuItem("Kopieren");
-		miCopy.setOnAction(e->{this.editCopy();});
-		
-		MenuItem miPaste = new MenuItem("Einfügen");
-		miPaste.setOnAction(e->{this.editPaste();});
-		
-		MenuItem miDelete = new MenuItem("Löschen");
-		miDelete.setOnAction(e->{this.editDelete();});
-		
-		menuEdit.getItems().addAll(miUndo, miCut, miCopy, miPaste, miDelete);
-			
-		 
-		// Hilfe
-		MenuItem miInfo = new MenuItem("Info");
-		miInfo.setOnAction(e->{this.helpInfo();});	
-		menuHelp.getItems().add(miInfo);
-		
-		// 
+		Parent root = FXMLLoader.load(getClass().getResource("SimpleTextEditor.fxml")); 
 		primaryStage.setTitle("Einfacher Texteditor");
 	    primaryStage.setScene(new Scene(root, 600, 400));
 	    primaryStage.show();		
